@@ -141,10 +141,10 @@
     [NetWork POST_:url parameters:parameters success:^(NSDictionary *dic) {
         
         NSInteger code = [dic[@"code"] integerValue];
-//        if (code == kNetwork_successCode)
-//        {
-//            success(dic);
-//        }
+        if (code == @"这里放服务器的成功码")
+        {
+            success(dic);
+        }
         
     } fail:^(NSError *error) {
         
@@ -166,15 +166,15 @@
         [weakSelf endRefreshing];
         
         NSInteger code = [dic[@"code"] integerValue];
-//        if (code == kNetwork_successCode)
-//        {
+        if (code == @"这里放服务器的成功码")
+        {
             success(dic);
-//        }
-//        else
-//        {
-//            [self.view showToastMsg:dic[@"errorMessage"]];
-//        }
-        
+        }
+        else
+        {
+            [self.view showToastMsg:dic[@"errorMessage"]];
+        }
+     
     } fail:^(NSError *error) {
         
         [self endRefreshing];
